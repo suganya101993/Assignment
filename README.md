@@ -50,12 +50,6 @@ Which should first use jshint to lint the step definitions (options are specifie
     
     Done, without errors.
 
-## Running the tests on an Android device
-
-I've only tried this with a physical device, but it should work with the emulator with some small changes.
-
-To get started, connect an Android device to your computer via USB and ensure USB debugging is turned on. You might need to authorise the computer on the phone before anything will work.
-
 If you haven't done so already, ensure you've got the project and installed dependencies:
 
     git clone git://github.com/Matt-B/cucumber-js-selenium-webdriver-example.git
