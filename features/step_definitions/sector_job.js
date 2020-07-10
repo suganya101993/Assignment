@@ -1,7 +1,6 @@
 'use strict';
 const {defineSupportCode} = require('cucumber');
 const {By} = require('selenium-webdriver');
-const {expect} = require('chai');
 const assert = require('assert');
 
 defineSupportCode(function({When,Then}) {
