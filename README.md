@@ -1,13 +1,22 @@
 # Automated Testing in JavaScript with Cucumber-JS and Selenium-Webdriver
 
 
-This is an example project using cucumber-js and selenium-webdriver to run browser-based automated tests, in both desktop Chrome and Chrome on Android.
+This is an assignment project of testing a job site using cucumber-js and selenium-webdriver to run browser-based automated tests, in desktop Chrome.
 
-I've put this here as it took me a while to get going with this setup, and I thought others might find this useful as a starter to experiment with cucumber and webdriver in JavaScript, or as a base on which to build their own test suites.
+I've put this here as it took me a while to get going with this setup. 
 
-Currently, the project has a single test which searches Google for 'cucumbers' and verifies some results are shown. It runs the tests in Chrome and so you'll need Chrome and the Chromedriver executable on your path. If you're running the tests on Android, you'll need an Android device with Chrome installed. All the JavaScript is linted using jshint before the tests are run (using options specified in the Gruntfile). If any scenarios fail, a screenshot will be taken as a PNG and put in ./screenshots/. After the tests are finished Cucumber shuts down the Webdriver instance.
+This project has multiple test files to test on the reputed company job website.The following list of criteria have been tested with cucumber scenarios and steps:
+ - Jobs page renders correctly with the following components visible:
+    - navigation bar
+    - search fields
+    - sector lists
+    - jobs blog
+    - featured jobs
+    - footer   
+
+It runs the tests in Chrome and so you'll need Chrome and the Chromedriver executable on your path. All the JavaScript is linted using jshint before the tests are run (using options specified in the Gruntfile). If any scenarios fail, a screenshot will be taken as a PNG and put in ./screenshots/. After the tests are finished Cucumber shuts down the Webdriver instance.
 ``
-## Running the tests on the desktop
+## Running the tests 
 
 To get going, you'll need Chrome (or Chromium) installed, and you'll also need the Chromedriver executable available on your path. You can get Chromedriver from [here](http://chromedriver.storage.googleapis.com/index.html) and then, in Linux, you can add the directory to your path like this:
 
