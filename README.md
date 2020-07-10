@@ -62,40 +62,6 @@ If you haven't done so already, ensure you've got the project and installed depe
     cd cucumber-js-selenium-webdriver-example
     npm install
 
-This will install Appium, but you'll need to start the server (it's probably best to do this in a separate terminal):
-
-    cd node_modules/appium/
-    node . 
-
-Once that has started successfully, then try running the test:
-
-    [me@computer cucumber-js-selenium-webdriver-example]$ grunt android
-    Running "jshint:files" (jshint) task
-    >> 4 files lint free.
-
-    Running "exec:run_cucumber_tests" (exec) task
-
-    Feature: Searching for cucumbers
-      As an internet user
-      In order to find out more about cucumbers
-      I want to be able to search for information about cucumbers
- 
-
-      Scenario: Google cucumber search       # features/google.feature:6
-        When I search Google for "cucumbers" # features/google.feature:7
-        Then I should see some results       # features/google.feature:8
- 
-
-    1 scenario (1 passed)
-    2 steps (2 passed)
-
-    Done, without errors.
-
-
-All done!
-
-## Writing your own tests
-
 If you want to use this as a jumping off point for a new test project, then remove all the git gubbins:
 
     rm -R .git
