@@ -1,5 +1,4 @@
-'use strict';
-
+require('chromedriver');
 const {After, Before} = require('cucumber');
 const fs = require('fs');
 const path = require('path');
@@ -8,6 +7,7 @@ const World = require('../support/world');
 
 function defineSupportCode(finished, testCase, callback) {
 
+    "use strict";
     // After(function(scenarioResult) {
     //     if(scenarioResult.isFailed()) {
     //         this.driver.takeScreenshot().then(function(data){
@@ -36,3 +36,5 @@ const before = defineSupportCode.bind(this, false);
 Before(before);
 After(after);
 After(() => World.end());
+
+

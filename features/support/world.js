@@ -1,4 +1,3 @@
-'use strict';
 require('chromedriver');
 const { setWorldConstructor, setDefaultTimeout } = require('cucumber');
 const {defineSupportCode} = require('cucumber');
@@ -22,6 +21,7 @@ function buildDriver() {
         .withCapabilities(chromeCapabilities)
         .build();
 }
+
 defineSupportCode(function({setDefaultTimeout}) {
     setDefaultTimeout(DEFAULT_TIMEOUT);
 });
@@ -42,11 +42,8 @@ class CustomWorld {
 }
 
 const World = function World() {
-
     const screenshotPath = "screenshots";
-
     this.driver = buildDriver();
-
     if(!fs.existsSync(screenshotPath)) {
         fs.mkdirSync(screenshotPath);
     }
