@@ -1,10 +1,8 @@
 'use strict';
-const {defineSupportCode} = require('cucumber');
+const {When,Then} = require('cucumber');
 const {By} = require('selenium-webdriver');
 const assert = require('assert');
 const World = require('../support/world');
-
-defineSupportCode(function({When,Then}) {
 
     When(/^I Click the "([^"]*)" TAB with (\d+)$/, function (sector,index) {
         World.driver.findElement(By.css('section[class ="browse brick"]')).isDisplayed();
@@ -27,4 +25,4 @@ defineSupportCode(function({When,Then}) {
         World.driver.findElement(By.linkText('Apply')).isDisplayed();
         World.driver.findElement(By.linkText('Home')).click();
     });
-});
+

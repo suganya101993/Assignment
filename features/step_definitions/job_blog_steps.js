@@ -1,10 +1,8 @@
 'use strict';
-const {defineSupportCode} = require('cucumber');
+const {Then,When} = require('cucumber');
 const {By} = require('selenium-webdriver');
 const assert = require('assert');
 const World = require('../support/world');
-
-defineSupportCode(function({When, Then}) {
 
     Then(/^I Verifying \("([^"]*)"\) blog Text\("([^"]*)"\) and Viewing article link\("([^"]*)"\) is working with (\d+)$/, function (job,jobText,link,index) {
         World.driver.executeScript("window.scrollBy(0,500)");
@@ -40,4 +38,4 @@ defineSupportCode(function({When, Then}) {
         World.driver.findElement(By.css('ul[class ="share-buttons cf"]')).isDisplayed();
         World.driver.findElement(By.linkText('Back to listing')).click();
     });
-});
+

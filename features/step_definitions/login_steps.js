@@ -1,12 +1,10 @@
 'use strict';
-const {defineSupportCode} = require('cucumber');
+const {When,Then} = require('cucumber');
 const {By} = require('selenium-webdriver');
 const {expect} = require('chai');
 const assert = require('assert');
 const World = require('../support/world');
 
-
-defineSupportCode(function({When,Then}) {
 
 When(/^User Navigate to LogIn Page$/, function () {
     World.driver.findElement(By.linkText('Sign in')).click();
@@ -21,6 +19,4 @@ When(/^User enters "([^"]*)" and "([^"]*)"$/, function (username, password) {
 
 Then(/^Message displayed Login Successfully$/, function () {
     World.driver.findElement(By.linkText('Sign out')).isDisplayed();
-});
-
 });

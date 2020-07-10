@@ -1,10 +1,10 @@
 'use strict';
 const {By} = require('selenium-webdriver');
 const assert = require('assert');
-const {defineSupportCode} = require('cucumber');
+const {When, Then} = require('cucumber');
 const World = require('../support/world');
 
-defineSupportCode(function({Given,When, Then}) {
+// defineSupportCode(function({When, Then}) {
 
     Then(/^Footer Section should get visible$/, function () {
         World.driver.findElement(By.className('contentinfo')).isDisplayed();
@@ -47,4 +47,3 @@ defineSupportCode(function({Given,When, Then}) {
             World.driver.switchTo().window(handles[0]);
         });
     });
-});

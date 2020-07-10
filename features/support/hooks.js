@@ -1,12 +1,12 @@
 'use strict';
 
-const {defineSupportCode,After, Before} = require('cucumber');
+const {After, Before} = require('cucumber');
 const fs = require('fs');
 const path = require('path');
 const sanitize = require("sanitize-filename");
 const World = require('../support/world');
 
-defineSupportCode(function({finished, testCase, callback}) {
+function defineSupportCode(finished, testCase, callback) {
 
     // After(function(scenarioResult) {
     //     if(scenarioResult.isFailed()) {
@@ -27,7 +27,7 @@ defineSupportCode(function({finished, testCase, callback}) {
     if (callback) {
         callback();
     }
-});
+}
 
 const after = defineSupportCode.bind(this, true);
 

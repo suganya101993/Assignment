@@ -1,11 +1,9 @@
 'use strict';
-const {defineSupportCode} = require('cucumber');
+const {When,Then} = require('cucumber');
 const {By} = require('selenium-webdriver');
 const {expect} = require('chai');
 const assert = require('assert');
 const World = require('../support/world');
-
-defineSupportCode(function({Given,When,Then}) {
 
 When(/^user enters the "([^"]*)" and "([^"]*)"$/, function (keywords,location) {
     World.driver.findElement(By.id("keywords")).sendKeys(keywords);
@@ -27,6 +25,4 @@ Then(/^User Should see the filtered Job Listing$/, function () {
 Then(/^User Should see the filtered "([^"]*)" and "([^"]*)" Job Listing$/, function (keywords,location) {
     World.driver.findElement(By.css('input[value="'+keywords+'"]')).isDisplayed();
     World.driver.findElement(By.css('input[value="'+location+'"]')).isDisplayed();
-});
-
 });

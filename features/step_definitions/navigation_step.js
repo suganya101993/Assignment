@@ -1,10 +1,8 @@
 'use strict';
-const {defineSupportCode} = require('cucumber');
+const {When,Then} = require('cucumber');
 const assert = require('assert');
 const {By} = require('selenium-webdriver');
 const World = require('../support/world');
-
-defineSupportCode(function({When, Then}) {
 
     When(/^I Click Navigation "([^"]*)" TAB$/, function (tabButton) {
         World.driver.findElement(By.linkText(tabButton)).click();
@@ -17,4 +15,4 @@ defineSupportCode(function({When, Then}) {
             assert.equal(tabTitle,result)
         });
     });
-});
+

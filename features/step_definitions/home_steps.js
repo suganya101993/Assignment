@@ -1,10 +1,8 @@
 'use strict';
-const {defineSupportCode} = require('cucumber');
+const {Given,Then} = require('cucumber');
 const assert = require('assert');
 const {By} = require('selenium-webdriver');
 const World = require('../support/world');
-
-defineSupportCode(function({Given,When, Then}) {
 
     Given(/^Get into Job page$/, () => World.goToJobsPage());
         // this.driver.get('https://jobs.economist.com/');
@@ -17,4 +15,3 @@ defineSupportCode(function({Given,When, Then}) {
     Then(/^Page is Loaded$/, function () {
         World.driver.findElement(By.id('primary-nav')).isDisplayed();
     });
-});
