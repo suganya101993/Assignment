@@ -1,9 +1,9 @@
-const {Given,Then} = require('cucumber');
+const {Given, Then} = require('cucumber');
 const assert = require('assert');
 const {By} = require('selenium-webdriver');
 const World = require('../support/world');
 
-(function() {
+(function () {
     "use strict";
     Given(/^Get into Job page$/, () => World.goToJobsPage());
 

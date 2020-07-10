@@ -1,9 +1,9 @@
-const {When,Then} = require('cucumber');
+const {When, Then} = require('cucumber');
 const assert = require('assert');
 const {By} = require('selenium-webdriver');
 const World = require('../support/world');
 
-(function() {
+(function () {
     "use strict";
     When(/^I Click Navigation "([^"]*)" TAB$/, function (tabButton) {
         World.driver.findElement(By.linkText(tabButton)).click();

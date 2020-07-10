@@ -1,10 +1,10 @@
-const {When,Then} = require('cucumber');
+const {When, Then} = require('cucumber');
 const {By} = require('selenium-webdriver');
 const {expect} = require('chai');
 const assert = require('assert');
 const World = require('../support/world');
 
-(function() {
+(function () {
     "use strict";
     When(/^User Navigate to LogIn Page$/, function () {
         World.driver.findElement(By.linkText('Sign in')).click();

@@ -1,9 +1,9 @@
-const {Then,When} = require('cucumber');
+const {Then, When} = require('cucumber');
 const {By} = require('selenium-webdriver');
 const assert = require('assert');
 const World = require('../support/world');
 
-(function() {
+(function () {
     "use strict";
     Then(/^I Verifying \("([^"]*)"\) blog Text\("([^"]*)"\) and Viewing article link\("([^"]*)"\) is working with (\d+)$/, function (job, jobText, link, index) {
         World.driver.executeScript("window.scrollBy(0,500)");

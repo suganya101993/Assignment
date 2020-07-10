@@ -3,7 +3,7 @@ const assert = require('assert');
 const {When, Then} = require('cucumber');
 const World = require('../support/world');
 
-(function() {
+(function () {
     "use strict";
     Then(/^Footer Section should get visible$/, function () {
         World.driver.findElement(By.className('contentinfo')).isDisplayed();

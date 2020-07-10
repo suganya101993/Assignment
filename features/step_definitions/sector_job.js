@@ -1,9 +1,9 @@
-const {When,Then} = require('cucumber');
+const {When, Then} = require('cucumber');
 const {By} = require('selenium-webdriver');
 const assert = require('assert');
 const World = require('../support/world');
 
-(function() {
+(function () {
     "use strict";
     When(/^I Click the "([^"]*)" TAB with (\d+)$/, function (sector, index) {
         World.driver.findElement(By.css('section[class ="browse brick"]')).isDisplayed();
