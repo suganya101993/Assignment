@@ -4,11 +4,11 @@ const {By} = require('selenium-webdriver');
 const {expect} = require('chai');
 const assert = require('assert');
 
-defineSupportCode(function({When}) {
+defineSupportCode(function({Then}) {
 
-   When(/^User Navigate to Registration Page$/, function () {
+   Then(/^User Navigate to Registration Page$/, function () {
        this.driver.findElement(By.linkText('Create account')).click();
        this.driver.findElement(By.css('div[class*="card"]')).isDisplayed();
     });
 
-   });
+});
