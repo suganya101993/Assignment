@@ -21,40 +21,16 @@ Verify it is working by opening a terminal and typing 'chromedriver'. You should
 
 If all seems OK, Ctrl+C to get rid of that, and carry on:
 
-    git clone git://github.com/Matt-B/cucumber-js-selenium-webdriver-example.git
-    cd cucumber-js-selenium-webdriver-example
+    git clone git://github.com/suganya101993/Assignment.git
+    cd Assignment
     npm install
     node_modules/grunt-cli/bin/grunt
 
 Which should first use jshint to lint the step definitions (options are specified in the Gruntfile.js), and then run the tests, producing output that looks something like:
 
-    [me@computer cucumber-js-selenium-webdriver-example]$ grunt
+    [me@computer Assignment]$ grunt
     Running "jshint:files" (jshint) task
     >> 4 files lint free.
-    
-    Running "exec:run_cucumber_tests" (exec) task
-    
-    Feature: Searching for cucumbers
-      As an internet user
-      In order to find out more about cucumbers
-      I want to be able to search for information about cucumbers
-    
-    
-      Scenario: Google cucumber search       # features/google.feature:6
-        When I search Google for "cucumbers" # features/google.feature:7
-        Then I should see some results       # features/google.feature:8
-    
-    
-    1 scenario (1 passed)
-    2 steps (2 passed)
-    
-    Done, without errors.
-
-If you haven't done so already, ensure you've got the project and installed dependencies:
-
-    git clone git://github.com/Matt-B/cucumber-js-selenium-webdriver-example.git
-    cd cucumber-js-selenium-webdriver-example
-    npm install
 
 If you want to use this as a jumping off point for a new test project, then remove all the git gubbins:
 
