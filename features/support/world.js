@@ -1,48 +1,45 @@
 'use strict';
 require('chromedriver');
-// const webdriver = require('selenium-webdriver');
-// const  driver = new webdriver.Builder()
-//     .forBrowser('chrome')
-//     .build();
-// driver.get('https://google.com');
+const { setWorldConstructor, setDefaultTimeout } = require('cucumber');
 const {defineSupportCode} = require('cucumber');
-const {Builder, By, until} = require('selenium-webdriver');
+const {Builder, Capabilities,By, until} = require('selenium-webdriver');
 const fs = require('fs');
 const platform = process.env.PLATFORM || "CHROME";
 
-const buildAndroidDriver = function() {
-    return new Builder().
-    usingServer('http://localhost:4723/wd/hub').
-    withCapabilities({
-        platformName: 'Android',
-        deviceName: 'Android device',
-        browserName: 'Chrome'
-    }).
-    build();
-};
+const DEFAULT_TIMEOUT = 60000;
+const BASE_URL = 'https://jobs.economist.com';
 
-const buildChromeDriver = function() {
-    return new Builder().forBrowser("chrome").build();
-};
+function buildDriver() {
+    const chromeCapabilities = Capabilities.chrome();
+    const chromeOptions = {
+        args: ['window-size=1920,1080'],
+    };
 
-const buildFirefoxDriver = function() {
-    return new Builder().forBrowser("firefox").build();
-};
+    chromeCapabilities.set('chromeOptions', chromeOptions);
 
-const buildDriver = function() {
-    switch(platform) {
-        case 'ANDROID':
-            return buildAndroidDriver();
-        case 'FIREFOX':
-            return buildFirefoxDriver();
-        default:
-            return buildChromeDriver();
-    }
-};
-
+    return new Builder()
+        .forBrowser('chrome')
+        .withCapabilities(chromeCapabilities)
+        .build();
+}
 defineSupportCode(function({setDefaultTimeout}) {
-    setDefaultTimeout(60 * 10000);
+    setDefaultTimeout(DEFAULT_TIMEOUT);
 });
+
+class CustomWorld {
+    goToJobsPage() {
+        return this.driver.get(BASE_URL);
+    }
+
+    start() {
+        this.driver = buildDriver();
+    }
+
+    async end() {
+        await this.driver.close();
+        return this.driver.quit();
+    }
+}
 
 const World = function World() {
 
@@ -57,5 +54,9 @@ const World = function World() {
 };
 
 defineSupportCode(function({setWorldConstructor}) {
-    setWorldConstructor(World);
+    setWorldConstructor(CustomWorld);
 });
+
+
+module.exports = new CustomWorld();
+
