@@ -16,6 +16,7 @@ const World = require('../support/world');
 
 
     When(/^I should see the Job Blog page with Job Articles$/, function () {
+        World.driver.manage().timeouts().implicitlyWait(10000)
         World.driver.findElement(By.tagName('h1')).getAttribute("innerText").then(textValue => {
             assert.equal('Jobs blog',textValue)
         });

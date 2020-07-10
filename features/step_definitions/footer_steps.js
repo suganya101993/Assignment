@@ -15,10 +15,12 @@ const World = require('../support/world');
         });
     });
     When(/^I Click "([^"]*)" TAB$/, function (footerTabs) {
+        World.driver.manage().timeouts().implicitlyWait(10000);
         World.driver.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         World.driver.findElement(By.linkText(footerTabs)).click();
     });
     Then(/^I should see "([^"]*)" Page$/, function (footerTabs) {
+        World.driver.manage().timeouts().implicitlyWait(10000);
         World.driver.findElement(By.tagName('h1')).getAttribute("innerText").then(textValue => {
             assert.equal(footerTabs,textValue)
         });
@@ -30,9 +32,10 @@ const World = require('../support/world');
         World.driver.findElement(By.tagName('h1')).getAttribute("innerText").then(textValue => {
             assert.equal(footerTabs,textValue)
         });
+        World.driver.findElement(By.linkText('Jobseekers')).click();
     });
     When(/^I Click "([^"]*)" Icon$/, function (socialText) {
-        World.driver.findElement(By.linkText('Jobseekers')).click();
+        World.driver.manage().timeouts().implicitlyWait(10000)
         World.driver.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         World.driver.findElement(By.css('ul[class ="social-buttons cf"]')).isDisplayed();
         World.driver.findElement(By.css('a[data-icon="'+socialText+'"]')).click();

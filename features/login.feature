@@ -12,4 +12,4 @@ Feature: In the Sign_in Job Blog
     Examples:
       | Username | Password |
       | tester.usereconomics@gmail.com | Tester@123 |
-      | testuser_2 | Test@154 |
+      | testuser_2@gmail.com | Test@154 |

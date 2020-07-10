@@ -15,7 +15,7 @@ Feature: Footer in the Job page
     Then I should see "Privacy Policy" Page
     When I Click "Advertise with us" TAB
     Then I should see "Refund policy" TAB
-    When I Click "HELP" TAB
+    When I Click "Help" TAB
     Then I should see "Help" Page
     When I Click "F" Icon
     Then I should Navigate to Economics "The Economist Careers Network | Facebook" Job Page

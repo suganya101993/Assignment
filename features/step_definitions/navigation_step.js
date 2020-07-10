@@ -9,9 +9,10 @@ const World = require('../support/world');
     });
 
     Then(/^I should see some "([^"]*)" Page$/, function (tabTitle) {
+        World.driver.manage().timeouts().implicitlyWait(10000)
         World.driver.findElement(By.tagName('h1')).getAttribute("innerText").then(textValue => {
-            // const res = textValue.split(" ");
-            // const result = res[0].trim();
+            const res = textValue.split(" ");
+            const result = res[0].trim();
             assert.equal(tabTitle,result)
         });
     });
