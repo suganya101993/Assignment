@@ -3,7 +3,7 @@ Feature: Footer in the Job page
   Verifying all the links
 
   Scenario: Navigating to Footer pages make sure all Links are functional
-    Given Job page is Loaded
+    Given Navigate to Job page
     Then Footer Section should be visible
     When I Click "About Us" TAB
     Then I should see "About Us" Page

@@ -5,7 +5,7 @@ const World = require('../support/world');
 
 (function () {
     "use strict";
-    Given(/^Job page is Loaded$/, () => World.goToJobsPage());
+    Given(/^Navigate to Job page$/, () => World.goToJobsPage());
 
     Then(/^Page is Loaded$/, function () {
         World.driver.findElement(By.css('title')).getAttribute("innerText").then(textValue => {

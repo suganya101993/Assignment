@@ -3,5 +3,5 @@ Feature: In the Registration Job Blog
   Verifying navigating to correct page
 
   Scenario: Get into Registration Page
-    Given Job page is Loaded
+    Given Navigate to Job page
     Then User Navigate to Registration Page

@@ -2,7 +2,7 @@ Feature: In the Sector Job Blog
   Verifying all the sector field Jobs and Blogs
 
   Scenario: Navigate to Sector Jobs Page and verifying the page functionalities
-    Given Job page is Loaded
+    Given Navigate to Job page
     And I Click the "Banking and finance" TAB with 1
     Then I should see the "Banking and finance" Filtered Jobs
     And I Click the "Business services" TAB with 2

@@ -5,7 +5,7 @@ Feature: Validation for Sign_in Page
   Verifying Invalid username and password
 
   Scenario Outline: Verifying the valid and invalid credentials to the login page
-    Given Job page is Loaded
+    Given Navigate to Job page
     And User Navigate to LogIn Page
     When User enters "<Username>" and "<Password>"
     Then Message displayed Login Successfully
