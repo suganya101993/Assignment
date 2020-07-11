@@ -49,7 +49,6 @@ const World = function World() {
     }
 
 };
-
 defineSupportCode(function ({setWorldConstructor}) {
     setWorldConstructor(CustomWorld);
 });

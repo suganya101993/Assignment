@@ -2,6 +2,8 @@ const {When, Then} = require('cucumber');
 const assert = require('assert');
 const {By} = require('selenium-webdriver');
 const World = require('../support/world');
+let tagElementOne = "h1";
+let innerElement = "innerText";
 
 (function () {
     "use strict";
@@ -11,7 +13,7 @@ const World = require('../support/world');
 
     Then(/^I should see some "([^"]*)" Page$/, function (tabTitle) {
         World.driver.manage().timeouts().implicitlyWait(10000);
-        World.driver.findElement(By.tagName('h1')).getAttribute("innerText").then(textValue => {
+        World.driver.findElement(By.tagName(tagElementOne)).getAttribute(innerElement).then(textValue => {
             const res = textValue.split(" ");
             const result = res[0].trim();
             assert.equal(tabTitle, result);

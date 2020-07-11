@@ -1,13 +1,13 @@
-Feature: In the Sign_in Job Blog
-  when clicking Sign in button from job site
+Feature: Validation for Sign_in Page
+  when clicking Sign in button from job page
   Verifying navigating to correct page
   Verifying Valid username and password
   Verifying Invalid username and password
 
-  Scenario Outline: Get into Sector Jobs
-    Given Get into Job page
-    When User Navigate to LogIn Page
-    And User enters "<Username>" and "<Password>"
+  Scenario Outline: Verifying the valid and invalid credentials to the login page
+    Given Job page is Loaded
+    And User Navigate to LogIn Page
+    When User enters "<Username>" and "<Password>"
     Then Message displayed Login Successfully
     Examples:
       | Username | Password |

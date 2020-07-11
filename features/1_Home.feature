@@ -1,9 +1,8 @@
-Feature: Get into Job Portal Page
-  As an SDET user
+Feature: Navigate to the Economics Job Portal Page
   In order to find out Page is loaded correctly
 
   Scenario: Get into Economics job portal
-    Given Get into Job page
+    Given Job page is Loaded
     Then Page is Loaded
 
 

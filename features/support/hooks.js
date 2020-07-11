@@ -11,12 +11,10 @@ function defineSupportCode(finished, testCase, callback) {
     if (!finished) {
         World.start();
     }
-
     if (callback) {
         callback();
     }
 }
-
 const after = defineSupportCode.bind(this, true);
 
 const before = defineSupportCode.bind(this, false);
