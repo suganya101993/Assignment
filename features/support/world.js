@@ -15,9 +15,7 @@ function buildDriver() {
     };
 
     chromeCapabilities.set('chromeOptions', chromeOptions);
-
-    return new Builder()
-        .forBrowser('chrome')
+    return new Builder().forBrowser('chrome')
         .withCapabilities(chromeCapabilities)
         .build();
 }

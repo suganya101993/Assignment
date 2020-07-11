@@ -8,13 +8,13 @@ let emailElement = "signinemail";
 let pwdElement = "signinpassword";
 let msgElement = "message";
 let titleElement = "title";
-let signInElement = "Sign in";
-
+let signInButtonElement = "Sign in";
+let signInElement ='input[value = "Sign in"]';
 
 (function () {
     "use strict";
     When(/^User Navigate to LogIn Page$/, function () {
-        World.driver.findElement(By.linkText(signInElement)).click();
+        World.driver.findElement(By.linkText(signInButtonElement)).click();
         World.driver.findElement(By.css(titleElement)).getAttribute(innerElement).then(textValue => {
             assert.equal('Logon | Jobs.Economist.com', textValue);
         });
@@ -24,7 +24,7 @@ let signInElement = "Sign in";
         World.driver.manage().timeouts().implicitlyWait(10000);
         World.driver.findElement(By.id(emailElement)).sendKeys(username);
         World.driver.findElement(By.id(pwdElement)).sendKeys(password);
-        World.driver.findElement(By.css('input[value = "Sign in"]')).click();
+        World.driver.findElement(By.css(signInElement)).click();
     });
 
     Then(/^Message displayed Login Successfully$/, function () {
