@@ -9,24 +9,27 @@ let innerElement = "innerText";
 
 class CustomFooterPage {
     isFooterVisible() {
+
         //Make sure footer frame is visible
+
         World.driver.findElement(By.className('contentinfo')).isDisplayed();
         World.driver.findElement(By.css('ul[class = "tertiary-nav__items cf"]')).isDisplayed();
         let element = World.driver.findElement(By.css('p[class="copyright no-margin"]'));
+        //Verifying the Text from the footer frame
         element.getText().then(textValue => {
             assert.equal('© 2011 - 2020 The Economist Newspaper Limited. Powered by Madgex Job Board Solutions', textValue);
         });
     }
 
     clickOnFooterMenu(footerTabs) {
-        //Navigate to respective Footer Tabs
+        //For navigating to the respective footer tab
         World.driver.manage().timeouts().implicitlyWait(10000);
         World.driver.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         World.driver.findElement(By.linkText(footerTabs)).click();
     }
 
     navToFooterTabPages(footerTabs) {
-        //Make sure get into respective Footer Menu page
+        //To ensure that it navigate to the respective footer menu page
         World.driver.manage().timeouts().implicitlyWait(10000);
         World.driver.findElement(By.tagName(tagElementOne)).getAttribute(innerElement).then(textValue => {
             assert.equal(footerTabs, textValue);
@@ -34,7 +37,9 @@ class CustomFooterPage {
     }
 
     isFooterTabVisible(footerTabs) {
-        //Make sure Footer Tab is visible
+
+        //To ensure after clicking the "Advertise with us" footer tab "Help" tab should get visible
+
         World.driver.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         World.driver.findElement(By.linkText(footerTabs)).isDisplayed();
         World.driver.findElement(By.linkText(footerTabs)).click();
@@ -45,7 +50,8 @@ class CustomFooterPage {
     }
 
     isFooterSocialIconVisible(socialText) {
-        //Clicking respective footer social icons
+
+        //Clicking the respective social icons from the footer frame
         World.driver.manage().timeouts().implicitlyWait(10000);
         World.driver.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         World.driver.findElement(By.css('ul[class ="social-buttons cf"]')).isDisplayed();
@@ -53,7 +59,8 @@ class CustomFooterPage {
     }
 
     isSocialPageNavToCorrectPage(socialTitle) {
-        // Navigate to the respective social footer pages
+
+        // To ensure after clicking social icon from the footer frame.It should navigate to the respective social page.
         World.driver.getAllWindowHandles().then(handles => {
             World.driver.switchTo().window(handles[1]);
             World.driver.findElement(By.tagName(titleElement)).getAttribute(innerElement).then(fb => {

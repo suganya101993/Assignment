@@ -8,7 +8,8 @@ let createElement = "Create account";
 
 
 class CustomRegistrationPage {
-//Navigate to Registration Page
+
+ //User navigate to the registration page when clicking the "create account" tab.
     navToRegistrationPage(pageTitle){
         World.driver.findElement(By.linkText(createElement)).click();
         World.driver.findElement(By.css(titleElement)).getAttribute(innerElement).then(textValue => {

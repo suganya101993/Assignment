@@ -8,13 +8,14 @@ let tagElementOne = "h1";
 
 
 class CustomNavigationPage {
- // Navigating particular Tab Menu
+
+ // To click the respective menu item from the economist job page
     clickNavTab(tabButton) {
         World.driver.findElement(By.linkText(tabButton)).click();
     }
 
     navToMenuPage(tabTitle) {
- // Make sure menu page from respective menu
+ // After clicking the menu item,to ensure that it navigate to the respective menu page
         World.driver.manage().timeouts().implicitlyWait(10000);
         World.driver.findElement(By.tagName(tagElementOne)).getAttribute(innerElement).then(textValue => {
             const res = textValue.split(" ");

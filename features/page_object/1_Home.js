@@ -8,7 +8,8 @@ const assert = require('assert');
 
 class CustomHomePage{
 
-    //Get the Job title from the Job page
+    //Get the Economist Job title from the URL
+
     getTheJobPageTitle(pageTitle){
             World.driver.findElement(By.css(titleElement)).getAttribute(innerElement).then(textValue => {
             const res = textValue.split('|');
