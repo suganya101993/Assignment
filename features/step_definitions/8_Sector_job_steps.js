@@ -1,5 +1,5 @@
 const {When, Then} = require('cucumber');
-const Sector = require('../Page_object/8_Sector');
+const Sector = require('../page_object/8_Sector');
 
 (function () {
     "use strict";

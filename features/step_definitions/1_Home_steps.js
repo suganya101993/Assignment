@@ -3,7 +3,7 @@ const assert = require('assert');
 const {By} = require('selenium-webdriver');
 const World = require('../support/world');
 let navElement = "primary-nav";
-const Home = require('../Page_object/1_Home');
+const Home = require('../page_object/1_Home');
 
 
 (function () {

@@ -1,5 +1,5 @@
 const {When, Then} = require('cucumber');
-const Search = require('../Page_object/7_Search');
+const Search = require('../page_object/7_Search');
 
 
 (function () {

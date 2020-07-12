@@ -1,5 +1,5 @@
 const {When, Then} = require('cucumber');
-const Footer = require('../Page_object/3_Footer');
+const Footer = require('../page_object/3_Footer');
 
 (function () {
     "use strict";

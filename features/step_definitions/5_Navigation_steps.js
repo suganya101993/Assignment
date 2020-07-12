@@ -1,5 +1,5 @@
 const {When, Then} = require('cucumber');
-const Navigation = require('../Page_object/5_Navigation');
+const Navigation = require('../page_object/5_Navigation');
 
 (function () {
     "use strict";

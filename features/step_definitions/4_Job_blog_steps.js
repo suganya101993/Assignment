@@ -7,7 +7,7 @@ let imageElement = "//*[@id='main']/div/div/div[1]/ul/li[1]/div/div[1]/a/img";
 let innerElement = "innerText";
 let tagElementOne = "h1";
 let tagElementTwo = "h3";
-const Job_Blog = require('../Page_object/4_Job_Blog');
+const Job_Blog = require('../page_object/4_Job_Blog');
 
 (function () {
     "use strict";

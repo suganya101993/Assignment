@@ -2,7 +2,7 @@ const {When, Then} = require('cucumber');
 const {By} = require('selenium-webdriver');
 const World = require('../support/world');
 let msgElement = "message";
-const Login = require('../Page_object/2_Login');
+const Login = require('../page_object/2_Login');
 
 
 (function () {
