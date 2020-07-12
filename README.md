@@ -34,7 +34,7 @@ If all seems OK, Ctrl+C to get rid of that, and carry on:
       git clone git://github.com/suganya101993/Assignment.git
       cd Assignment
       npm install
-      node_modules/grunt-cli/bin/grunt
+      npm run test
       
 Which should first use jshint to lint the step definitions (options are specified in the Gruntfile.js), and then run the tests, 
 producing output that looks something like:
