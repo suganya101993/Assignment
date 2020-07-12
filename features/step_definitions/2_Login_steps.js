@@ -1,30 +1,19 @@
 const {When, Then} = require('cucumber');
 const {By} = require('selenium-webdriver');
-const {expect} = require('chai');
-const assert = require('assert');
 const World = require('../support/world');
-let innerElement = "innerText";
-let emailElement = "signinemail";
-let pwdElement = "signinpassword";
 let msgElement = "message";
-let titleElement = "title";
-let signInButtonElement = "Sign in";
-let signInElement ='input[value = "Sign in"]';
+const Login = require('../Page_object/2_Login');
+
 
 (function () {
     "use strict";
-    When(/^User Navigate to LogIn Page$/, function () {
-        World.driver.findElement(By.linkText(signInButtonElement)).click();
-        World.driver.findElement(By.css(titleElement)).getAttribute(innerElement).then(textValue => {
-            assert.equal('Logon | Jobs.Economist.com', textValue);
-        });
+
+    When(/^User Navigate to LogIn Page "([^"]*)"$/, function (pageTitle) {
+        Login.navToLoginPage(pageTitle);
     });
 
     When(/^User enters "([^"]*)" and "([^"]*)"$/, function (username, password) {
-        World.driver.manage().timeouts().implicitlyWait(10000);
-        World.driver.findElement(By.id(emailElement)).sendKeys(username);
-        World.driver.findElement(By.id(pwdElement)).sendKeys(password);
-        World.driver.findElement(By.css(signInElement)).click();
+        Login.loginWith(username, password);
     });
 
     Then(/^Message displayed Login Successfully$/, function () {

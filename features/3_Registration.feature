@@ -4,4 +4,4 @@ Feature: In the Registration Job Blog
 
   Scenario: Get into Registration Page
     Given Navigate to Job page
-    Then User Navigate to Registration Page
+    Then User Navigate to Registration Page "Register | Jobs.Economist.com"

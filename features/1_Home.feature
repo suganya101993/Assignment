@@ -3,6 +3,6 @@ Feature: Navigate to the Economics Job Portal Page
 
   Scenario: Get into Economics job portal
     Given Navigate to Job page
-    Then Page is Loaded
+    Then Page is Loaded with the title "Jobs.Economist.com"
 
 

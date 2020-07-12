@@ -6,7 +6,7 @@ Feature: Validation for Sign_in Page
 
   Scenario Outline: Verifying the valid and invalid credentials to the login page
     Given Navigate to Job page
-    And User Navigate to LogIn Page
+    When User Navigate to LogIn Page "Logon | Jobs.Economist.com"
     When User enters "<Username>" and "<Password>"
     Then Message displayed Login Successfully
     Examples:

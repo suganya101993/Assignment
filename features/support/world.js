@@ -18,6 +18,7 @@ function buildDriver() {
     return new Builder().forBrowser('chrome')
         .withCapabilities(chromeCapabilities)
         .build();
+
 }
 
 defineSupportCode(function ({setDefaultTimeout}) {
@@ -50,7 +51,6 @@ const World = function World() {
 defineSupportCode(function ({setWorldConstructor}) {
     setWorldConstructor(CustomWorld);
 });
-
 
 module.exports = new CustomWorld();
 
