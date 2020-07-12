@@ -12,12 +12,14 @@ let signInElement ='input[value = "Sign in"]';
 class CustomLoginPage{
 
     navToLoginPage(pageTitle){
+        //User navigate to the Login page
         World.driver.findElement(By.linkText(signInButtonElement)).click();
         World.driver.findElement(By.css(titleElement)).getAttribute(innerElement).then(textValue => {
             assert.equal(pageTitle, textValue);
         });
     }
     loginWith(username, password){
+        // User Enter username and password
         World.driver.manage().timeouts().implicitlyWait(10000);
         World.driver.findElement(By.id(emailElement)).sendKeys(username);
         World.driver.findElement(By.id(pwdElement)).sendKeys(password);

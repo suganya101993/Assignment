@@ -12,6 +12,8 @@ let homeElement = "Page-objects";
 class CustomSectorPage {
 
     clickSectorJobs(sector, index) {
+
+        // Navigating to particular job sector fields
         World.driver.findElement(By.css('section[class ="browse brick"]')).isDisplayed();
         let total = World.driver.findElement(By.xpath('//*[@id="main"]/div[3]/div/section/div/div/ul/li[' + index + ']/small'));
         let totalSector = World.driver.executeScript('return arguments[0].innerHTML', total);
@@ -25,6 +27,8 @@ class CustomSectorPage {
     }
 
     verifyingSectorPage(sector) {
+        // Verifying the filtered jobs in home page and sector page are same
+
         World.driver.findElement(By.className('filter__parent-term')).getAttribute(innerElement).then(filterValue => {
             assert.equal(sector, filterValue);
         });
