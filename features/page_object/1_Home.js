@@ -8,7 +8,7 @@ const assert = require('assert');
 
 class CustomHomePage{
 
-    getTheJobTitle(pageTitle){
+    getTheJobPageTitle(pageTitle){
             World.driver.findElement(By.css(titleElement)).getAttribute(innerElement).then(textValue => {
             const res = textValue.split('|');
             const result = res[0].trim();

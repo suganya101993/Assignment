@@ -12,7 +12,7 @@ const Home = require('../page_object/1_Home');
 
     Then(/^Page is Loaded with the title "([^"]*)"$/, function (pageTitle) {
 
-        Home.getTheJobTitle(pageTitle);
+        Home.getTheJobPageTitle(pageTitle);
         return World.driver.findElement(By.id(navElement)).isDisplayed();
     });
 
